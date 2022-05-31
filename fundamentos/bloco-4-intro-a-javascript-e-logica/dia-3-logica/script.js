@@ -75,6 +75,7 @@ function ast2() {
     console.log(row);
   }
 }
+<<<<<<< HEAD
 
 // Exercício 3
 function ast3() {
@@ -87,6 +88,10 @@ function ast3() {
   }
 }
 console.log(ast3())
+=======
+console.log(ast2())
+// Exercício 3
+>>>>>>> 21c060f59826f3c65fcff97584fa15fde6a4caf6
 // Exercício 4
 // Exercício 5
 // Exercício 6
