@@ -1,19 +1,24 @@
-const pushNumber = (list, number) => list.push(number);
+const countryName = ({ name }) =>  console.log(`Returned country is ${name}`);
+const countryCurrency = ({ name, currency }) => console.log(`${name} currency is ${currency}`);
 
-let numbers = [];
+const delay = (maxMilliseconds = 5000) => Math.floor(Math.random * maxMilliseconds);
 
-pushNumber(numbers, 1);
-pushNumber(numbers, 2);
-pushNumber(numbers, 3);
+const printErrorMessage = (error) => console.log(`Error getting country ${error}`);
 
-console.log(numbers);
+const getCountry = (onSucess) => {
+  setTimeout(() => {
+    const didOperationsucceed = Math.random() >= 0.5;
+    if (didOperationsucceed) {
+      const country = {
+        name: 'Brazil',
+        hdi: 0.759,
+        currency: 'Real',
+      };
+      onSucess(country);
+    } else {
+      const errorMessage = 'Country could not be found';
+    }
+  }, delay());
+};
 
-const pushNumber2 = (list, number) => list.push(number);
-
-let numbers2 = [];
-
-setTimeout(() => pushNumber2(numbers2, 1), 3000);
-pushNumber2(numbers2, 2);
-pushNumber2(numbers2, 3);
-
-setTimeout(() => console.log(numbers2), 3001);
+console.log(getCountry(countryName, printErrorMessage));
